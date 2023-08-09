@@ -23,3 +23,6 @@ docker run --name mysql -p3306:3306 -e MYSQL_ROOT_PASSWORD=oracle -d mysql:lates
 
 # connect to mysql docker container
 mysql -h 127.0.0.1 -u root -p
+
+# to inspect ip address of the container
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' iwayq 

@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>welcome, to the java app for docker tomcat container</title>
 </head>
 <body>
-Already registered!! <a href="login">Login Here</a>
+Are you Already registered!! <a href="login">Login Here</a>
 </body>
 </html>
