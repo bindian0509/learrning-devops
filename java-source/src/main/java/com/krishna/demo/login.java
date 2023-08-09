@@ -29,12 +29,14 @@ public class login {
 	private String userId = "";
 
 	private String errorMessage="";
-	
+
 	@RequestMapping(value = "login", method = RequestMethod.POST)
 	public ModelAndView login(String userName, String password) throws ClassNotFoundException {
 
-		
-		Class.forName("com.mysql.jdbc.Driver");
+
+		// Removed Class.forName() statement as it is not needed in modern JDBC drivers
+		// Class.forName("com.mysql.jdbc.Driver");
+		Class.forName("com.mysql.cj.jdbc.Driver");
 		// validate user credentials
 		String query = "select * from Employee where username='" + userName + "' and password='"+password+"'";
 		try (Connection con = DriverManager.getConnection(url, DBusername, DBpassword);
@@ -52,28 +54,28 @@ public class login {
 
 		ModelAndView mv;
 		if (userId != "")
-		{			
+		{
 			mv = new ModelAndView("user");
 			mv.addObject("username", userId);
 		}
 		else
 		{
-			
+
 			mv = new ModelAndView("login");
 			mv.addObject("errorMessage", errorMessage);
 		}
 
 		return mv;
 	}
-	
-	
-	
+
+
+
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public ModelAndView registerform()
 	{
 		ModelAndView mv=new ModelAndView("login");
-		
-		return mv;		
+
+		return mv;
 	}
 
 }
