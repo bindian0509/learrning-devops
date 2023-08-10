@@ -8,11 +8,11 @@ curl --user "admin:RQb7ctKtx5KFP6q" http://localhost:8082/artifactory/libs-relea
 
 # build docker image
 
-docker build . --tag iwayq-tomcat
+docker build . --tag iwayq
 
 # run docker image
 
-docker run --name iwayq-java-app -p 8080:8080 -d iwayq-tomcat
+docker run --name iwayq -p 8080:8080 -d iwayq
 
 
 # login into docker container
@@ -25,4 +25,4 @@ docker run --name mysql -p3306:3306 -e MYSQL_ROOT_PASSWORD=oracle -d mysql:lates
 mysql -h 127.0.0.1 -u root -p
 
 # to inspect ip address of the container
-docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' iwayq 
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' iwayq
