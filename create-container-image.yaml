@@ -32,7 +32,7 @@
   - name: Log into DockerHub
     docker_login:
      username: bindian0509
-     password: oracle@123
+     password: XXXXXXXXXX
 
 
   - name: Push to docker hub
