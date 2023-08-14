@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: iwayq-container
-        image: iwayqdockertest/iwayq:1.0
+        image: bindian0509/iwayq:1.0
         ports:
         - containerPort: 8080

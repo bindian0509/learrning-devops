@@ -1,3 +1,7 @@
+# to run a docker based artifactory container
+
+docker run --name artifactory -v /home/bharat/jfrog_artifactory_data:/var/opt/jfrog/artifactory -d -p 8081:8081 -p 8082:8082 releases-docker.jfrog.io/jfrog/artifactory-oss:latest
+
 # create war file
 
 mvn -U deploy -s settings.xml
@@ -26,3 +30,7 @@ mysql -h 127.0.0.1 -u root -p
 
 # to inspect ip address of the container
 docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' iwayq
+
+
+# sonarqube code check
+ mvn clean verify sonar:sonar -Dsonar.projectKey=coding-with-java -Dsonar.projectName='coding-with-java' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_3d15e66d0c50b3a74c52e6a1a5e455e18d124179
